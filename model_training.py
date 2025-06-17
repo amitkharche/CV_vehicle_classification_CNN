@@ -3,6 +3,18 @@ Train a CNN to classify vehicles from CCTV-style images.
 """
 
 import os
+import sys
+
+# Get the absolute path to the root of the repo (assuming this script is in a subfolder or the root)
+REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the path to the CSV file relative to the repo root
+DATA_PATH = os.path.join(REPO_ROOT, "data", "vehicle_labels.csv")
+MODEL_DIR = os.path.join(REPO_ROOT, "model")
+
+
+
+import os
 import logging
 import pandas as pd
 import numpy as np
@@ -18,7 +30,7 @@ import pickle
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 IMG_SIZE = (64, 64)
-DATA_PATH = "data/vehicle_labels.csv"
+#DATA_PATH = "data/vehicle_labels.csv"
 MODEL_DIR = "model"
 
 def load_data():
